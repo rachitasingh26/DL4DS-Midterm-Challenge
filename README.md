@@ -279,11 +279,25 @@ These augmentation techniques help the model learn robust features by exposing i
 
 ---
 
-## Experiment Tracking Summary - Weights & Biases (wandb):
+## Experiment Tracking Summary:
 
-- All experiments were logged to wandb for real-time monitoring of training and validation metrics.
+- All experiments were logged to Weights and Biases (wandb) for real-time monitoring of training and validation metrics.
+  
+![image](https://github.com/user-attachments/assets/bc33c769-119b-4e49-a0a0-24b5a698c8d8)
+<br>
 
-![All Experiment Results](Experiment Tracking/All experiements.png)
+
+The screenshot above shows a set of training runs logged in the experiment tracking tool (Weights & Biases). Each line represents a different run configuration or hyperparameter setting, and the charts display how metrics such as training/validation loss, training/validation accuracy, and learning rate evolve over time. We can see that most models converge steadily, with validation accuracy curves leveling off near the end of training. The training accuracy tends to climb faster, indicating that the networks learn to fit the training data effectively, while the gap between training and validation metrics suggests varying degrees of overfitting among the runs. The learning rate curves illustrate how the scheduler adjusts over epochs, and differences in the final performance across runs highlight the importance of tuning hyperparameters (like learning rate, batch size, or augmentation strategies) for achieving optimal results.
+<br>
+
+![image](https://github.com/user-attachments/assets/f5205788-cb9f-428e-b0f4-5b50248587b0)
+<br>
+
+
+The screenshot above shows the training and validation metrics for the best-performing model over its entire training cycle. In particular, the val_loss curve consistently decreases, while val_acc rises and stabilizes at a high level, indicating effective learning and good generalization on the validation set. Simultaneously, the train_loss and train_acc charts reveal that the model converges smoothly on the training data without drastically overfitting, as evidenced by the validation metrics closely tracking the training curves. The lr plot demonstrates how the dynamic learning rate schedule (e.g., OneCycleLR) evolves over epochs, allowing the model to adapt its learning pace. Together, these metrics confirm that the chosen hyperparameters, data augmentation strategies, and architectural modifications synergized to produce a strong final performance on CIFAR-100.
+
+
+
 
 
 
