@@ -282,7 +282,8 @@ These augmentation techniques help the model learn robust features by exposing i
 ## Experiment Tracking Summary - Weights & Biases (wandb):
 
 - All experiments were logged to wandb for real-time monitoring of training and validation metrics.
-- Metrics tracked include training/validation loss, accuracy, and learning rate.
+
+![All Experiment Results](Experiment Tracking/All experiements.png)
 
 
 
